@@ -11,14 +11,14 @@ const HomePage = () => {
   useEffect(() => {
     getData(MOVIES_URL)
       .then(response => {
-        setMovies([...responde.data.result]);
+        setMovies([...response.data.result]);
       })
       .catch(error => {
         console.log(error.message);
       });
   }, [MOVIES_URL]);
 
-  return;
+  return (
   <>
     <h1>Trending today </h1>
     <ul>
@@ -33,7 +33,8 @@ const HomePage = () => {
         );
       })}
     </ul>
-  </>;
+  </>
+  )
 };
 
 export default HomePage;
