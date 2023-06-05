@@ -1,10 +1,17 @@
 import React from 'react';
+import { lazy } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
+
+
+
+const Cast = lazy(() => import('../components/Cast/Cast'));
 
 const App = () => {
   return (  
-    <>
-    Hello World
-    </>
+    <Routes>
+<Route path='cast' element={<Cast/>}/>
+
+    </Routes>
   );
 }
  
