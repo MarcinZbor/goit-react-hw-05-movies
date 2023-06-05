@@ -1,21 +1,15 @@
-import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { BiSearch } from 'react-icons/bi';
-import useMovies from '../MoviePage/MoviePage';
+import useMovies from '../../Hooks/useMovie';
 import css from './MoviePage.module.css';
 
 const MoviesPage = () => {
   const [movies, handleSubmit, moreBtn, handleLoadMore] = useMovies();
   const location = useLocation();
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    handleSubmit();
-  };
-
   return (
     <>
-      <form className={css.form} onSubmit={handleFormSubmit}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <button className={css.button} type="submit">
           <BiSearch size="20px" />
         </button>
@@ -31,7 +25,7 @@ const MoviesPage = () => {
       </form>
       <ul>
         {movies.length > 0 &&
-          movies.map((movie) => {
+          movies.map(movie => {
             const { original_title, id } = movie;
             return (
               <li key={id}>

@@ -11,7 +11,7 @@ const HomePage = () => {
   useEffect(() => {
     getData(MOVIES_URL)
       .then(response => {
-        setMovies([...response.data.result]);
+        setMovies([...response.data.results]);
       })
       .catch(error => {
         console.log(error.message);
@@ -19,22 +19,22 @@ const HomePage = () => {
   }, [MOVIES_URL]);
 
   return (
-  <>
-    <h1>Trending today </h1>
-    <ul>
-      {movies.map(film => {
-        const { original_title, id } = film;
-        return (
-          <li key={id} className={film}>
-            <Link to={`movies/${id}`} state={{ from: location }}>
-              {original_title}
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
-  </>
-  )
+    <>
+      <h1>Trending today</h1>
+      <ul>
+        {movies.map(film => {
+          const { original_title, id } = film;
+          return (
+            <li key={id} className={film}>
+              <Link to={`movies/${id}`} state={{ from: location }}>
+                {original_title}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
 };
 
 export default HomePage;
