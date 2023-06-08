@@ -49,10 +49,10 @@ const MovieDetailsPage = () => {
       <div>
         <h4>Additional information</h4>
         <ul>
-          <li key={1}>
+          <li >
             <Link to="cast">Cast</Link>
           </li>
-          <li key={2}>
+          <li >
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>
