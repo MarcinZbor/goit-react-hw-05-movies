@@ -8,7 +8,7 @@ const useMovie = () => {
   const [moreBtn, setMoreBtn] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
-  const MOVIES_URL = `3/search/movie?&query=${query}&page=1&include_adult=false&page=${page}`;
+  const MOVIES_URL = `3/search/movie?&query=${query}&page=${page}&include_adult=false`;
 
   const handleSubmit = event => {
     event.preventDefault();
