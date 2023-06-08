@@ -1,10 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import API_KEY from 'Api/Api';
 import { getData } from 'Api/Api';
 
 const HomePage = () => {
-  const MOVIES_URL = `3/trending/movie/day?api_key=${API_KEY}`;
+  const MOVIES_URL = `3/trending/movie/day`;
   const [movies, setMovies] = useState([]);
   const location = useLocation();
 

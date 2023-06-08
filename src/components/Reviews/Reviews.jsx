@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import API_KEY from 'Api/Api';
 import { getData } from 'Api/Api';
 
 const Reviews = () => {
@@ -9,7 +8,7 @@ const Reviews = () => {
 
   const CAST_URL = `3/movie/${Number(
     movieId
-  )}/reviews?api_key=${API_KEY}&language=en-US`;
+  )}/reviews`;
 
   useEffect(() => {
     getData(CAST_URL)

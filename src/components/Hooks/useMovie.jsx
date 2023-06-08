@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import API_KEY from 'Api/Api';
+// import API_KEY from 'Api/Api';
 import { getData } from 'Api/Api';
 
 const useMovie = () => {
@@ -8,7 +8,7 @@ const useMovie = () => {
   const [moreBtn, setMoreBtn] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
-  const MOVIES_URL = `3/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false&page=${page}`;
+  const MOVIES_URL = `3/search/movie?&query=${query}&page=1&include_adult=false&page=${page}`;
 
   const handleSubmit = event => {
     event.preventDefault();
